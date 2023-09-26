@@ -1,4 +1,5 @@
-import React from "react";
+import { totalmem } from "os";
+import React, { useState } from "react";
 import AdCard, { AdCardProps } from "./AdCard";
 
 const RecentAds = () => {
@@ -46,19 +47,33 @@ const RecentAds = () => {
       category: "objet",
     },
   ];
+
+  const [total, setTotal] = useState(0);
+  const totalPrice = (price: number) => {
+    setTotal(total + price);
+  };
+
   return (
-    <section className="recent-ads">
-      {ads.map((ad, index) => (
-        <AdCard
-          key={index}
-          imgURL={ad.imgURL}
-          link={ad.link}
-          price={ad.price}
-          title={ad.title}
-          category={ad.category}
-        />
-      ))}
-    </section>
+    <>
+      <h2>Annonces récentes</h2>
+      <p>Prix total: {total} € </p>
+      <section className="recent-ads">
+        {ads.map((ad, index) => (
+          <div key={index}>
+            <AdCard
+              imgURL={ad.imgURL}
+              link={ad.link}
+              price={ad.price}
+              title={ad.title}
+              category={ad.category}
+            />
+            <button className="button" onClick={() => totalPrice(ad.price)}>
+              Add price to total
+            </button>
+          </div>
+        ))}
+      </section>
+    </>
   );
 };
 
