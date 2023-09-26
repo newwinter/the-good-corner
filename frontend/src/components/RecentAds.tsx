@@ -5,54 +5,60 @@ const RecentAds = () => {
   const ads: AdCardProps[] = [
     {
       imgURL: "/images/table.webp",
-      link: "/ads/table",
+      link: "/ad/table",
       price: 120,
       title: "table",
+      category: "meuble",
     },
     {
       imgURL: "/images/dame-jeanne.webp",
-      link: "/ads/dame-jeanne",
+      link: "/ad/dame-jeanne",
       price: 75,
       title: "dame-jeanne",
+      category: "objet",
     },
     {
       imgURL: "/images/vide-poche.webp",
-      link: "/ads/vide-poche",
+      link: "/ad/vide-poche",
       price: 4,
       title: "vide-poche",
+      category: "objet",
     },
     {
-      imgURL: "/images/vaissellier.webp",
-      link: "/ads/vaissellier",
+      imgURL: "/images/vaisselier.webp",
+      link: "/ad/vaissellier",
       price: 900,
       title: "vaisselier",
+      category: "meuble",
     },
     {
       imgURL: "/images/bougie.webp",
-      link: "/ads/bougie",
+      link: "/ad/bougie",
       price: 8,
       title: "bougie",
+      category: "objet",
     },
     {
       imgURL: "/images/porte-magazine.webp",
-      link: "/ads/porte-magazine",
+      link: "/ad/porte-magazine",
       price: 45,
       title: "porte-magazine",
+      category: "objet",
     },
   ];
   return (
-    <>
-      <h2>Annonces récentes</h2>
-      {ads.map((ad, i) => (
+    <section className="recent-ads">
+      {ads.map((ad, index) => (
         <AdCard
-          key={i}
+          key={index}
           imgURL={ad.imgURL}
           link={ad.link}
           price={ad.price}
           title={ad.title}
+          category={ad.category}
         />
       ))}
-    </>
+    </section>
   );
 };
 
