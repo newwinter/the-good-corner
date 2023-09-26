@@ -1,6 +1,6 @@
 import React from "react";
 
-type AdCardProps = {
+export type AdCardProps = {
   title: string;
   imgURL: string;
   price: number;
