@@ -20,7 +20,7 @@ CREATE TABLE categories (
 );
 
 -- Ajout des éléments dans la table
-INSERT INTO ads(title,description,owner,price,picture,location,createdAt,category_id) VALUES 
+INSERT INTO ads(title,description,owner,price,picture,location,createdAt,categoryId) VALUES 
 ('voiture','description 1','James',10000,'https://img.freepik.com/free-vector/modern-blue-urban-adventure-suv-vehicle-illustration_1344-205.jpg?w=826&t=st=1695202577~exp=1695203177~hmac=9084b56fdd56226b2b38f3c52f4a561d9d8c76f57a33ce4408e6c1bb58d147d4','Paris','2023-09-18', 2),
 ('vélo vintage','description 2','Hugo',100,'https://img.freepik.com/premium-photo/orange-bicycle-with-word-bike-it_655090-80678.jpg?w=826','Bordeaux','2023-09-05', 3),
 ('micro-onde','description 3','Paloma',110,'https://img.freepik.com/free-photo/retro-microwaves-kitchen_23-2150711866.jpg?t=st=1695203467~exp=1695207067~hmac=fee5bf7b930f8a9c6a02d44fea40129884f66231a5bf59caf739cbf392afb3d0&w=740','Lyon','2023-09-05',3),

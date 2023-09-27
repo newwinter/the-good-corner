@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
+import { Categories } from "./categories";
 
 @Entity()
 export class Ads extends BaseEntity {
@@ -11,14 +12,14 @@ export class Ads extends BaseEntity {
   @Column()
   description: string;
 
-  @Column({ length: 100})
-  owner : string;
+  @Column({ length: 100 })
+  owner: string;
 
   @Column()
   price: number;
 
-  @Column({ length: 255})
-  picture: string ;
+  @Column({ length: 255 })
+  picture: string;
 
   @Column()
   location: number;
@@ -26,5 +27,7 @@ export class Ads extends BaseEntity {
   @Column()
   createdAt: Date;
 
+  @ManyToOne(() => Categories) 
+  category: Categories;
 }
 
