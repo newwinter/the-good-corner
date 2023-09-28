@@ -111,6 +111,15 @@ app.post("/ads", async (req, res) => {
   res.send(ad);
 });
 
+// POST /catgeories
+app.post("/categories", async (req, res) => {
+  const category = new Categories();
+  category.name = req.body.name;
+
+  category.save();
+  res.send(category);
+});
+
 // PUT /ads
 app.put("/ads/:id", async (req, res) => {
   const id = parseInt(req.params.id);

@@ -47,6 +47,10 @@ useEffect(() => {
             <span className="mobile-short-label">Publier</span>
             <span className="desktop-long-label">Publier une annonce</span>
           </Link>
+          <Link href="/categories/new" className="button link-button">
+            <span className="mobile-short-label">Publier</span>
+            <span className="desktop-long-label">Publier une catégorie</span>
+          </Link>
         </div>
         <nav className="categories-navigation">
           {categories.map((category) => (
