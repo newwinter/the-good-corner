@@ -70,11 +70,17 @@ app.get("/ads/:id", async (req, res) => {
 // GET catégories
 app.get("/categories", async (req, res) => {
   const terms = req.query.terms;
-  const categories = await Categories.find({
-    where: {
-      name: Like(`%${terms}%`),
-    },
-  });
+
+  let categories: Categories[] = [];
+  if (terms) {
+    categories = await Categories.find({
+      where: {
+        name: Like(`%${terms}%`),
+      },
+    });
+  } else {
+    categories = await Categories.find();
+  }
 
   res.send(categories);
 });
