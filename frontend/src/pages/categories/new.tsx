@@ -22,7 +22,7 @@ const NewCategory = () => {
   //   fetchCategories();
   // }, []);
 
-  const submit = (event: FormEvent) => {
+  const submit = async (event: FormEvent) => {
     //prevenir du reloading de page
     event.preventDefault();
 
@@ -33,9 +33,8 @@ const NewCategory = () => {
     //ou en objet
     const formDataJson = Object.fromEntries(formData.entries());
     console.log(formDataJson);
-    axios
-      .post("http://localhost:5001/categories", formDataJson)
-      .then(() => router.push("/"));
+    await axios.post("http://localhost:5001/categories", formDataJson);
+      router.push("/")
   };
 
   return (
