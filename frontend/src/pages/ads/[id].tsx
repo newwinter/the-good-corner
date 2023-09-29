@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-// import axios from "axios"
+import axios from "axios"
 import { useState, useEffect } from "react"
 import { Ads } from "@/types/ads.types"
 
@@ -20,6 +20,11 @@ if (!ad) {
   return <div>Loading...</div>;
 }
 
+const deleteAd =  async () => {
+  axios.delete(`http://localhost:5001/ads/${ad.id}`)
+  router.push('/');
+}
+
   return (
     <>
       <h2 className="ad-details-title">{ad.title}</h2>
@@ -37,6 +42,7 @@ if (!ad) {
             Annoncée publiée par <b>{ad.owner}</b> aujourd&apos;hui {ad.createdAt}.
           </div>
         </div>
+        <button className="button" onClick={deleteAd}>Supprimer</button>
       </section>
     </>
   );
