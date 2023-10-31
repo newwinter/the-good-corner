@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Ads } from "./ads";
 
 @Entity()
 export class Categories extends BaseEntity {
@@ -8,4 +9,6 @@ export class Categories extends BaseEntity {
   @Column({ length: 100 })
   name: string;
 
+  @OneToMany(() => Ads, (ad) => ad.category)
+  ads: Ads[];
 }

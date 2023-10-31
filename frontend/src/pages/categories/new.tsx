@@ -9,7 +9,7 @@ type Category = {
 };
 
 const NewCategory = () => {
-  const [categories, setCategories] = useState<Category[]>([]);
+  // const [categories, setCategories] = useState<Category[]>([]);
   const router = useRouter();
 
   // useEffect(() => {
@@ -45,7 +45,7 @@ const NewCategory = () => {
           <br />
           <input className="text-field" type="text" name="name" />
         </label>
-        <button className="button">Submit</button>
+        <button className="button">Ajouter</button>
       </form>
     </>
   );
